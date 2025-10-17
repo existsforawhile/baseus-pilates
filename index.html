@@ -54,7 +54,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 60px; /* Sabit yükseklik */
+            height: 60px; 
             box-sizing: border-box;
         }
 
@@ -80,7 +80,7 @@
             color: #000000;
         }
 
-        /* Hamburger İkonu - Masaüstünde Gizli */
+        
         .hamburger {
             display: none;
             font-size: 1.8em;
@@ -204,7 +204,7 @@
 
         
         @media (max-width: 900px) {
-            /* Genel Responsive Düzenlemeler */
+            
             section {
                 padding: 80px 5%;
             }
@@ -238,12 +238,12 @@
                 margin-bottom: 30px;
             }
             
-            /* Mobil Navigasyon (Hamburger) */
+            
             nav {
-                display: none; /* Varsayılan olarak menüyü gizle */
+                display: none; 
                 flex-direction: column;
                 position: absolute;
-                top: 60px; /* Header yüksekliğinin hemen altı */
+                top: 60px; 
                 left: 0;
                 width: 100%;
                 background-color: #FFFFFF;
@@ -257,7 +257,7 @@
             
             nav.nav-active {
                 display: flex;
-                max-height: 500px; /* Açıkken yaklaşık yüksekliği */
+                max-height: 500px; 
             }
 
             nav a {
@@ -266,11 +266,11 @@
                 width: 90%;
                 text-align: left;
                 border-bottom: 1px solid #F0F0F0;
-                margin-left: 0; /* Masaüstü marginini sıfırla */
+                margin-left: 0; 
             }
             
             .hamburger {
-                display: block; /* Mobil cihazlarda hamburgeri göster */
+                display: block; 
             }
         }
     </style>
@@ -405,7 +405,7 @@
         </div>
     </section>
     
-    <!-- REFERANSLAR / YORUMLAR BÖLÜMÜ -->
+    
     <section id="yorumlar">
         <h2>Üyelerimizden Geri Bildirimler</h2>
         <div class="grid-layout">
@@ -430,7 +430,7 @@
         </div>
     </section>
 
-    <!-- FİYATLANDIRMA / PAKETLER BÖLÜMÜ -->
+    
     <section id="paketler" style="background-color: #000000; color: #FFFFFF;">
         <h2 style="color: #FFFFFF;">Paketler & Fiyatlandırma</h2>
         <p class="text-center" style="margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; font-size: 1.1em; opacity: 0.8;">
@@ -486,7 +486,7 @@
     </section>
 
 
-    <!-- İLETİŞİM BÖLÜMÜ -->
+    
     <section id="contact" style="background-color: #FFFFFF;">
         <h2>Bize Ulaşın</h2>
         
@@ -504,7 +504,7 @@
         </div>
     </section>
 
-    <!-- FOOTER BÖLÜMÜ -->
+    
     <footer style="text-align: center; padding: 30px; background-color: #000000; color: #BBBBBB; font-size: 0.85em;">
         <p>&copy; 2025 Beseus Pilates Stüdyosu. Tüm Hakları Saklıdır.</p>
         <p style="margin-top: 10px;">
@@ -519,15 +519,15 @@
             const navMenu = document.getElementById('mobile-menu');
             const navLinks = navMenu.querySelectorAll('a');
 
-            // 1. Menü görünürlüğünü aç/kapa
+            
             hamburger.addEventListener('click', () => {
                 navMenu.classList.toggle('nav-active');
             });
 
-            // 2. Linke tıklandığında menüyü kapat
+            
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    // Sayfa kaydırma animasyonu tamamlanırken menünün hemen kapanmaması için küçük bir gecikme
+                    
                     setTimeout(() => {
                         if (navMenu.classList.contains('nav-active')) {
                             navMenu.classList.remove('nav-active');
@@ -536,7 +536,7 @@
                 });
             });
             
-            // 3. Ekran boyutu değiştiğinde (masaüstüne geçildiğinde) menüyü gizle
+            
             window.addEventListener('resize', () => {
                 if (window.innerWidth > 900) {
                      if (navMenu.classList.contains('nav-active')) {
