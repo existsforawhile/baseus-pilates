@@ -54,6 +54,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 60px; /* Sabit yükseklik */
+            box-sizing: border-box;
         }
 
         .logo {
@@ -76,6 +78,18 @@
 
         nav a:hover {
             color: #000000;
+        }
+
+        /* Hamburger İkonu - Masaüstünde Gizli */
+        .hamburger {
+            display: none;
+            font-size: 1.8em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #000000;
+            z-index: 1001;
+            padding: 5px;
         }
 
         
@@ -190,22 +204,73 @@
 
         
         @media (max-width: 900px) {
-            .visual-block {
-                flex-direction: column;
+            /* Genel Responsive Düzenlemeler */
+            section {
+                padding: 80px 5%;
             }
-            .visual-block-reverse {
+            
+            .visual-block, .visual-block-reverse {
                 flex-direction: column;
+                margin: 40px 0;
+                gap: 30px;
             }
+            .visual-block .image-box {
+                min-height: 300px;
+            }
+
             #hero {
                 flex-direction: column;
+                min-height: auto;
             }
-            .hero-image, .hero-content {
-                min-height: 60vh;
+            .hero-image {
+                min-height: 50vh;
                 width: 100%;
-                padding: 40px 5%;
+            }
+            .hero-content {
+                width: 100%;
+                padding: 60px 5%;
+            }
+            #hero h1 {
+                font-size: 3em;
             }
             h2 {
                 font-size: 2em;
+                margin-bottom: 30px;
+            }
+            
+            /* Mobil Navigasyon (Hamburger) */
+            nav {
+                display: none; /* Varsayılan olarak menüyü gizle */
+                flex-direction: column;
+                position: absolute;
+                top: 60px; /* Header yüksekliğinin hemen altı */
+                left: 0;
+                width: 100%;
+                background-color: #FFFFFF;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+                padding: 20px 0;
+                z-index: 999;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+            
+            nav.nav-active {
+                display: flex;
+                max-height: 500px; /* Açıkken yaklaşık yüksekliği */
+            }
+
+            nav a {
+                margin: 0;
+                padding: 12px 5%;
+                width: 90%;
+                text-align: left;
+                border-bottom: 1px solid #F0F0F0;
+                margin-left: 0; /* Masaüstü marginini sıfırla */
+            }
+            
+            .hamburger {
+                display: block; /* Mobil cihazlarda hamburgeri göster */
             }
         }
     </style>
@@ -213,8 +278,9 @@
 <body>
 
     <header>
-        <a href="#hero" class="logo">BESEUS PILATES</a>
-        <nav>
+        <a href="#hero" class="logo">BESEUS</a>
+        <button class="hamburger" id="hamburger-toggle">&#9776;</button>
+        <nav id="mobile-menu">
             <a href="#hakkimizda">Felsefemiz</a>
             <a href="#dersler">Dersler</a>
             <a href="#ekip">Eğitmenler</a>
@@ -446,6 +512,40 @@
             <a href="#" style="color: #BBBBBB; text-decoration: none;">Kullanım Şartları</a>
         </p>
     </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger-toggle');
+            const navMenu = document.getElementById('mobile-menu');
+            const navLinks = navMenu.querySelectorAll('a');
+
+            // 1. Menü görünürlüğünü aç/kapa
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('nav-active');
+            });
+
+            // 2. Linke tıklandığında menüyü kapat
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Sayfa kaydırma animasyonu tamamlanırken menünün hemen kapanmaması için küçük bir gecikme
+                    setTimeout(() => {
+                        if (navMenu.classList.contains('nav-active')) {
+                            navMenu.classList.remove('nav-active');
+                        }
+                    }, 300); 
+                });
+            });
+            
+            // 3. Ekran boyutu değiştiğinde (masaüstüne geçildiğinde) menüyü gizle
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) {
+                     if (navMenu.classList.contains('nav-active')) {
+                        navMenu.classList.remove('nav-active');
+                    }
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
