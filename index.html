@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beseus Pilates - Zarafetle Güçlenin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F7F7F7;
+            color: #1A1A1A;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-top: 0;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: none;
+        }
+        
+        h3 {
+             font-size: 1.5em;
+             margin-bottom: 15px;
+        }
+
+        section {
+            padding: 120px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        
+        header {
+            background-color: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #000000;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: #444444;
+            text-decoration: none;
+            margin-left: 35px;
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #000000;
+        }
+
+        
+        #hero {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            min-height: 80vh;
+        }
+        
+        .hero-content {
+            padding: 80px 5%;
+            max-width: 600px;
+        }
+
+        .hero-image {
+            flex-grow: 1;
+            min-height: 80vh;
+            background: url('https://images.pexels.com/photos/8018976/pexels-photo-8018976.jpeg') center center / cover no-repeat;
+        }
+
+        #hero h1 {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+
+        
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        
+        .visual-block {
+            display: flex;
+            align-items: center;
+            margin: 60px 0;
+            gap: 50px;
+        }
+
+        .visual-block-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .visual-block .image-box {
+            flex: 1;
+            min-height: 450px;
+            background-color: #EAEAEA;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .visual-block .text-box {
+            flex: 1;
+            padding: 20px;
+        }
+
+        
+        .trainer-card {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .trainer-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 5px solid #E0E0E0;
+        }
+
+        
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #CCCCCC;
+            background-color: #FFFFFF;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #contact button {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        #contact button:hover {
+            background-color: #333333;
+        }
+
+        
+        @media (max-width: 900px) {
+            .visual-block {
+                flex-direction: column;
+            }
+            .visual-block-reverse {
+                flex-direction: column;
+            }
+            #hero {
+                flex-direction: column;
+            }
+            .hero-image, .hero-content {
+                min-height: 60vh;
+                width: 100%;
+                padding: 40px 5%;
+            }
+            h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#hero" class="logo">BESEUS PILATES</a>
+        <nav>
+            <a href="#hakkimizda">Felsefemiz</a>
+            <a href="#dersler">Dersler</a>
+            <a href="#ekip">Eğitmenler</a>
+            <a href="#yorumlar">Yorumlar</a> 
+            <a href="#paketler">Fiyatlandırma</a>
+            <a href="#contact">İletişim</a>
+        </nav>
+    </header>
+
+    
+    <section id="hero">
+        <div class="hero-content">
+            <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2em; opacity: 0.8;">Beden. Zihin. Ruh.</p>
+            <h1>Pilates'in Sanatsal Formu</h1>
+            <p style="font-size: 1.1em; margin-bottom: 40px;">
+                Beseus, sıradan bir stüdyo olmanın ötesinde, zarafet ve gücün buluştuğu bir merkezdir. Kişiye özel programlarımızla hareket etme sanatını yeniden keşfedin.
+            </p>
+            <a href="#dersler" style="background-color: #FFFFFF; color: #000000; padding: 12px 30px; text-decoration: none; font-weight: 600; display: inline-block;">Dersleri Keşfet</a>
+        </div>
+        <div class="hero-image" role="img" aria-label="Pilates hareketini zarifçe yapan bir kadın." ondragstart="return false;">
+        </div>
+    </section>
+
+    
+    <section id="hakkimizda" style="background-color: #FFFFFF;">
+        <h2>Felsefemiz: Mükemmeliyet ve Kişiselleştirme</h2>
+        
+        <div class="visual-block">
+            <div class="image-box" 
+                 style="background-image: url('https://images.pexels.com/photos/13849063/pexels-photo-13849063.jpeg');"></div>
+            <div class="text-box">
+                <h3>Neden Beseus?</h3>
+                <p>
+                    Stüdyomuz, kalabalık dersler yerine, her üyesinin hedeflerine odaklanan butik bir hizmet anlayışını benimser. Pilates'in altı prensibini (Kontrol, Konsantrasyon, Merkezleme, Akış, Kesinlik ve Nefes) sadece hareket olarak değil, yaşam felsefesi olarak sunuyoruz. Yüksek tavanlı, gün ışığı alan ve huzur veren stüdyomuzda, kendinize ayırdığınız bu özel zamana değer katıyoruz.
+                </p>
+                <p>
+                    Uzman eğitmenlerimiz, vücut analizinizi yaparak sakatlık geçmişinizi ve postürel ihtiyaçlarınızı göz önünde bulunduran programlar hazırlar. Hareket kalitesini ve derin kas gruplarını aktive etmeyi önceliğimiz yapıyoruz.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid-layout" style="margin-top: 80px;">
+            <div class="feature-card">
+                <h3>Uzman Eğitmenler</h3>
+                <p>Uluslararası sertifikalı, yılların deneyimine sahip ve sürekli eğitim alan bir kadro.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Butik Sınıflar</h3>
+                <p>Maksimum 4 kişilik sınıflar ile her bireye özel ilgi ve düzeltme garantisi.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Yenilikçi Ekipman</h3>
+                <p>Son teknoloji, birinci sınıf Reformer, Cadillac ve Barrel ekipmanları.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="dersler">
+        <h2>Derslerimiz: Size Özel Hareket Programları</h2>
+        
+        <div class="visual-block visual-block-reverse">
+            <div class="image-box" 
+                 style="background-image: url('https://images.pexels.com/photos/25596674/pexels-photo-25596674.jpeg');"></div>
+            <div class="text-box">
+                <p style="font-family: 'Playfair Display', serif; font-size: 0.9em; opacity: 0.7;">TEMEL GÜÇ</p>
+                <h3>REFORMER PILATES</h3>
+                <p>
+                    Pilates metodunun zirve noktasıdır. Yayların sağladığı direnç sayesinde kasları hem güçlendirir hem de uzatır. Denge, koordinasyon ve esneklik üzerinde eş zamanlı çalışılır. Beseus'ta Reformer dersleri, bireysel veya ikili özel dersler şeklinde yoğunlaştırılmış programlarla sunulur. Postür bozuklukları, omurga sağlığı ve vücut şekillendirmede rakipsizdir.
+                </p>
+                <p>
+                    Her seans, eğitmenin kişisel gözlemleri ve hedefleriniz doğrultusunda dinamik olarak ayarlanır. Bu, standart bir egzersiz rutini değil, bedeninize özel bir sanat eseridir.
+                </p>
+            </div>
+        </div>
+
+        <div class="visual-block">
+            <div class="image-box" 
+                 style="background-image: url('https://images.pexels.com/photos/6246490/pexels-photo-6246490.jpeg');"></div>
+            <div class="text-box">
+                <p style="font-family: 'Playfair Display', serif; font-size: 0.9em; opacity: 0.7;">CORE & DENGE</p>
+                <h3>MAT & ÖZEL GRUP DERSLERİ</h3>
+                <p>
+                    Mat Pilates, kendi vücut ağırlığınızla çalışmanın saf gücüdür. Beseus'ta Mat dersleri, küçültülmüş grup formatında yapılır ve küçük ekipmanlarla (çember, top, foam roller) zenginleştirilir. Amacımız, beden farkındalığınızı artırmak ve günlük yaşam hareketlerinizi iyileştirmektir.
+                </p>
+                <h4>Özel Programlar:</h4>
+                <ul style="padding-left: 20px;">
+                    <li>Klinik Pilates (Sakatlık sonrası rehabilitasyon)</li>
+                    <li>Hamile Pilatesi (Güvenli ve destekleyici)</li>
+                    <li>Erkeklere Özel Güç Odaklı Pilates</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="ekip" style="background-color: #F0F0F0;">
+        <h2>Beseus Eğitmenleri: Bilgi ve Zarafet</h2>
+        <p class="text-center" style="margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; font-size: 1.1em;">
+            Hareket uzmanlarından oluşan ekibimiz, en yüksek standartlarda eğitim almış, size özel yolculuğunuzda rehberlik etmeye hazırdır.
+        </p>
+
+        <div class="grid-layout">
+            <div class="trainer-card">
+                <img src="https://images.pexels.com/photos/6516169/pexels-photo-6516169.jpeg" alt="Eğitmen Portresi">
+                <h3>ELİF KARADENİZ</h3>
+                <p style="font-weight: 600;">Kurucu & Master Eğitmen</p>
+                <p style="font-size: 0.9em; color: #555;">Omurga sağlığı ve postür düzeltme uzmanı. 12 yıllık tecrübesiyle Beseus'un vizyonunu belirliyor.</p>
+            </div>
+            <div class="trainer-card">
+                <img src="https://images.pexels.com/photos/6740056/pexels-photo-6740056.jpeg" alt="Eğitmen Portresi">
+                <h3>SUDE KURT</h3>
+                <p style="font-weight: 600;">Reformer & Sporcu Pilatesi</p>
+                <p style="font-size: 0.9em; color: #555;">Dinamik ve güç odaklı derslerin lideri. Atletik performansı artırmaya yönelik uzmanlık.</p>
+            </div>
+            <div class="trainer-card">
+                <img src="https://images.pexels.com/photos/6019850/pexels-photo-6019850.jpeg" alt="Eğitmen Portresi">
+                <h3>İPEK ÖZCAN</h3>
+                <p style="font-weight: 600;">Klinik & Hamile Pilatesi</p>
+                <p style="font-size: 0.9em; color: #555;">Fizyoterapi temelli yaklaşımıyla özel ihtiyaç gruplarına güvenli ve etkili destek sağlar.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- REFERANSLAR / YORUMLAR BÖLÜMÜ -->
+    <section id="yorumlar">
+        <h2>Üyelerimizden Geri Bildirimler</h2>
+        <div class="grid-layout">
+            <blockquote class="feature-card" style="border-left: 4px solid #000000;">
+                <p style="font-family: 'Playfair Display', serif; font-size: 1.1em;">
+                    "Beseus'a gelmek, haftanın en zarif saatleri. Vücudumun bu kadar esnek ve güçlü olabileceğini hiç düşünmemiştim. Ortamdaki huzur paha biçilmez."
+                </p>
+                <footer style="margin-top: 15px; font-style: italic; font-weight: 600;">— Selin ÖZTÜRK</footer>
+            </blockquote>
+            <blockquote class="feature-card" style="border-left: 4px solid #000000;">
+                <p style="font-family: 'Playfair Display', serif; font-size: 1.1em;">
+                    "Sırtımdaki kronik ağrıları Elif Hoca'nın özenli programı sayesinde unuttum. Buradaki birebir ilgi, diğer stüdyolardan çok farklı. Gerçekten profesyoneller."
+                </p>
+                <footer style="margin-top: 15px; font-style: italic; font-weight: 600;">— Emre KAYA</footer>
+            </blockquote>
+            <blockquote class="feature-card" style="border-left: 4px solid #000000;">
+                <p style="font-family: 'Playfair Display', serif; font-size: 1.1em;">
+                    "Hamileliğim boyunca kendimi hiç bu kadar güvende hissetmemiştim. İpek Hoca'nın bilgisi ve stüdyonun hijyeni mükemmel. Her anne adayına tavsiye ederim."
+                </p>
+                <footer style="margin-top: 15px; font-style: italic; font-weight: 600;">— Deniz EROL</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- FİYATLANDIRMA / PAKETLER BÖLÜMÜ -->
+    <section id="paketler" style="background-color: #000000; color: #FFFFFF;">
+        <h2 style="color: #FFFFFF;">Paketler & Fiyatlandırma</h2>
+        <p class="text-center" style="margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; font-size: 1.1em; opacity: 0.8;">
+            İhtiyaçlarınıza en uygun butik pilates deneyimi için farklı paket seçenekleri sunuyoruz. Detaylı bilgi ve size özel tekliflerimiz için iletişime geçin.
+        </p>
+
+        <div class="grid-layout">
+            <div class="feature-card" style="background-color: #1A1A1A; color: #FFFFFF; border: 1px solid #333;">
+                <h3 style="color: #FFFFFF;">Başlangıç Deneyimi</h3>
+                <p style="font-size: 2em; font-weight: 700; margin: 15px 0;">3 Ders</p>
+                <hr style="border-color: #333; margin: 20px 0;">
+                <ul style="padding-left: 20px; list-style: disc; opacity: 0.8;">
+                    <li>3 Birebir Reformer Dersi</li>
+                    <li>Detaylı Postür Analizi</li>
+                    <li>Sadece yeni üyeler için geçerlidir.</li>
+                    <li>15 gün geçerlilik süresi.</li>
+                </ul>
+                <a href="#contact" style="text-decoration: none;">
+                    <button style="background-color: #FFFFFF; color: #000000; padding: 10px 20px; border: none; margin-top: 30px; width: 100%; font-weight: 600;">Teklif İste</button>
+                </a>
+            </div>
+
+            <div class="feature-card" style="background-color: #FFFFFF; color: #000000; border: 4px solid #000000; box-shadow: 0 15px 25px rgba(255, 255, 255, 0.1);">
+                <h3 style="color: #000000;">Premium Üyelik</h3>
+                <p style="font-size: 2em; font-weight: 700; margin: 15px 0;">10 Ders</p>
+                <hr style="border-color: #000000; margin: 20px 0;">
+                <ul style="padding-left: 20px; list-style: disc; opacity: 0.9;">
+                    <li>10 Birebir Reformer Dersi</li>
+                    <li>Tüm Mat Grup Derslerine Sınırsız Katılım</li>
+                    <li>Özel Esneme Programı</li>
+                    <li>60 gün geçerlilik süresi.</li>
+                </ul>
+                <a href="#contact" style="text-decoration: none;">
+                    <button style="background-color: #000000; color: #FFFFFF; padding: 10px 20px; border: none; margin-top: 30px; width: 100%; font-weight: 600;">Detaylı Bilgi Al</button>
+                </a>
+            </div>
+            
+            <div class="feature-card" style="background-color: #1A1A1A; color: #FFFFFF; border: 1px solid #333;">
+                <h3 style="color: #FFFFFF;">Aylık Bağlılık</h3>
+                <p style="font-size: 2em; font-weight: 700; margin: 15px 0;">20 Ders</p>
+                <hr style="border-color: #333; margin: 20px 0;">
+                <ul style="padding-left: 20px; list-style: disc; opacity: 0.8;">
+                    <li>20 Birebir Reformer Dersi</li>
+                    <li>Özel Program Tasarımı</li>
+                    <li>%10 İndirimli Yenileme Hakkı</li>
+                    <li>90 gün geçerlilik süresi.</li>
+                </ul>
+                <a href="#contact" style="text-decoration: none;">
+                    <button style="background-color: #FFFFFF; color: #000000; padding: 10px 20px; border: none; margin-top: 30px; width: 100%; font-weight: 600;">Detaylı Bilgi Al</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- İLETİŞİM BÖLÜMÜ -->
+    <section id="contact" style="background-color: #FFFFFF;">
+        <h2>Bize Ulaşın</h2>
+        
+        <div style="max-width: 700px; margin: 0 auto;">
+             <div style="padding: 40px; background-color: #F7F7F7; border: 1px solid #E0E0E0;">
+                 <h3 style="text-align: center;">Deneme Dersi Rezervasyonu</h3>
+                 <form action="#" method="POST">
+                    <input type="text" placeholder="Adınız Soyadınız" required>
+                    <input type="email" placeholder="E-posta Adresiniz" required>
+                    <input type="tel" placeholder="Telefon Numaranız">
+                    <textarea placeholder="İlgi alanınız (Reformer, Mat, Klinik Pilates vb.)" rows="4"></textarea>
+                    <button type="submit">Randevu Talebini Gönder</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER BÖLÜMÜ -->
+    <footer style="text-align: center; padding: 30px; background-color: #000000; color: #BBBBBB; font-size: 0.85em;">
+        <p>&copy; 2025 Beseus Pilates Stüdyosu. Tüm Hakları Saklıdır.</p>
+        <p style="margin-top: 10px;">
+            <a href="#" style="color: #BBBBBB; text-decoration: none;">Gizlilik</a> | 
+            <a href="#" style="color: #BBBBBB; text-decoration: none;">Kullanım Şartları</a>
+        </p>
+    </footer>
+
+</body>
+</html>
